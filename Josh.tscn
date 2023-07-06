@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5tuviju1x8hh"]
+
+[ext_resource type="Texture2D" uid="uid://d1pujtyn67kmu" path="res://Speak-Sheet.png" id="1_5m22c"]
+[ext_resource type="Script" path="res://Animation.gd" id="2_mcx6n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lch8y"]
+atlas = ExtResource("1_5m22c")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3eu8x"]
+atlas = ExtResource("1_5m22c")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_667ws"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lch8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3eu8x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_8kw7b"]
+
+[node name="Josh" type="Node2D"]
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(6.22, 6.22)
+sprite_frames = SubResource("SpriteFrames_667ws")
+script = ExtResource("2_mcx6n")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamMicrophone_8kw7b")
+volume_db = 6.559
+autoplay = true
+bus = &"Mic"

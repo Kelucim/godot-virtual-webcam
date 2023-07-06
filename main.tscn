@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://b235p4h4lbknn"]
+
+[ext_resource type="PackedScene" uid="uid://b5tuviju1x8hh" path="res://Josh.tscn" id="1_ky53o"]
+
+[node name="Main" type="Node"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.694118, 0.25098, 1)
+
+[node name="Josh" parent="." instance=ExtResource("1_ky53o")]
+position = Vector2(552, 352)
+scale = Vector2(3, 3)
